@@ -12,7 +12,7 @@ try {
     const response =await fetch("https://dummyjson.com/quotes")
     const jsonData= await response.json()
     console.log(jsonData);
-    setQoutes(jsonData.quotes.slice(0,10))
+    setQoutes([jsonData.quotes[Math.floor(Math.random()*jsonData.quotes.length)]])
 }
 catch(e){
     console.error("error")
